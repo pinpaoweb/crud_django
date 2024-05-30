@@ -19,7 +19,7 @@
     <nav>
         <ul>
             <li><a href="{% url 'inicio' %}">Inicio</a></li>
-            <li><a href="{% url 'productos' %}">Productos</a></li>
+            <li><a href="{% url 'productos:lista_productos' %}">Productos</a></li> <!-- Corrige esta línea -->
             <li><a href="#">Quienes Somos</a></li>
             <li><a href="#">Contacto</a></li>
             <li><a href="#">Login</a></li>
@@ -30,6 +30,7 @@
     </nav>
     <main>
         {% block content %}
+        
         {% endblock %}
     </main>
 </body>

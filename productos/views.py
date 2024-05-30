@@ -1,17 +1,16 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Producto
 
-from .models import Producto
 # Create your views here.
 
 def holaMundo(request):
-    return HttpResponse("Hola Mundo ADSO")
+    return HttpResponse("¡Hola Mundo! ADSO")
+
+def home(request):
+    return HttpResponse("Bienvenido a la página principal")
 
 def inicio(request):
-    return render(request, 'inicio.html')
+    return render(request, 'inicio.html')  # Renderiza la plantilla inicio.html
 
 def lista_productos(request):
     productos_list = Producto.objects.all()
