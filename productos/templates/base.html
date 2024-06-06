@@ -9,7 +9,7 @@
         {% endblock %}
     </title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'productos:inicio' %}">Inicio</a></li>
             <li><a href="{% url 'productos:lista_productos' %}">Productos</a></li> <!-- Corrige esta línea -->
             <li><a href="#">Quienes Somos</a></li>
             <li><a href="#">Contacto</a></li>

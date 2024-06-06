@@ -1,21 +1,16 @@
-# inventario/urls.py
-from django.contrib import admin
-from django.urls import path
-from productos import views
-from .views import holaMundo 
-# productos/urls.py
-
 from django.urls import path
 from . import views
 
 app_name = 'productos'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hola-mundo/', views.holaMundo, name='holaMundo'),  # Usa 'holaMundo' aquí
-    path('', views.home, name='home'),  # Asegúrate de tener definida esta vista también
-    path('inicio/', views.inicio, name='inicio'),  # Añade esta línea
     path('', views.lista_productos, name='lista_productos'),
-    path('<int:producto_id>/', views.detalle, name='detalle'),
-    
-]   
+    path('<int:pk>/', views.detalle_producto, name='detalle_producto'),
+    path('nuevo/', views.crear_producto, name='crear_producto'),
+    path('<int:pk>/editar/', views.editar_producto, name='editar_producto'),
+    path('<int:pk>/eliminar/', views.eliminar_producto, name='eliminar_producto'),
+    path('hola-mundo/', views.holaMundo, name='holaMundo'),
+    path('home/', views.home, name='home'),
+    path('inicio/', views.inicio, name='inicio'),
+    path('productos/', views.lista_productos, name='lista_productos'),
+]

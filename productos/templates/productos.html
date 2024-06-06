@@ -1,5 +1,3 @@
-<!-- productos/templates/productos.html -->
-
 {% extends 'base.html' %}
 {% block title %}Lista de Productos{% endblock %}
 
@@ -19,7 +17,7 @@
             <p>{{ producto.descripcion|truncatechars:100 }}...</p>
             <div class="grupo-botones">
                 <button class="boton">Comprar</button>
-                <a href="{% url 'detalle' producto.id %}" class="boton">Detalles</a>
+                <a href="{% url 'productos:detalle_producto' producto.pk %}" class="boton">Detalles</a>
             </div>
         </div>
     {% endfor %}

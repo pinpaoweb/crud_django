@@ -1,3 +1,4 @@
+<!-- productos/templates/detalle.html -->
 {% extends 'base.html' %}
 
 {% block title %}{{ producto.nombre }}{% endblock %}
@@ -17,7 +18,7 @@
         <p class="stock">Stock: {{ producto.stock }}</p>
         <div class="grupo-botones">
             <button class="boton detalle-boton">Comprar</button>
-            <a href="{% url 'productos' %}" class="boton detalle-boton">Volver</a>
+            <a href="{% url 'productos:lista_productos' %}" class="boton detalle-boton">Volver</a>
         </div>
     </div>
     <article class="info-producto">
