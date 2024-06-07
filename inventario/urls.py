@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import render
 
+app_name = 'inventario'  # Asegúrate de que este namespace es único
 
 # Vista de inicio
 def inicio(request):
@@ -12,10 +13,9 @@ def inicio(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='inicio'),  # Ruta para la vista de inicio
-    path('', include('productos.urls', namespace='productos')),  # Incluye el namespace
-    path('productos/', include('productos.urls')),  # Incluye las URLs de la aplicación 'productos'
-  
-    path('productos/', include('productos.urls')),  # Incluye las URLs de la aplicación productos
+    #path('productos/', include('productos.urls', namespace='productos')),  # Incluye el namespace 'productos'
+    path('', include('productos.urls')),  # Incluye las URLs de la aplicación 'productos'
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
